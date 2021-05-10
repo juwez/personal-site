@@ -8,3 +8,4 @@ export default function BlogPost({ children, meta}) {
     </>
   )
 }
+    

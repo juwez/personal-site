@@ -1,19 +1,25 @@
-import Head from "next/head";
-import Header from "./Header";
+import Link from "next/link";
+import { HeadPost } from "./HeadPost";
 
-export default function Layout({ children, pageTitle, description }) {
+export const Post = ({ post }) => {
+  const {
+    link,
+    module: { meta }
+  } = post;
+
   return (
-    <>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta charSet="utf-8" />
-        <meta name="Description" content={description}></meta>
-        <title>{pageTitle}</title>
-      </Head>
-      <main>
-        <Header />
-        <div className="content">{children}</div>
-      </main>
-    </>
+    <article>
+      <HeadPost meta={meta} />
+      <Link href={"/blog" + link}>
+        <a>Read more &rarr;</a>
+      </Link>
+      <style jsx>
+        {`
+          article {
+            margin-bottom: 3rem;
+          }
+        `}
+      </style>
+    </article>
   );
-}
+};
