@@ -1,8 +1,8 @@
 import BlogPost from '../../../components/BlogPost'
 
 export const meta = {
-  title: 'building this blog',
-  description: 'what is Next.js',
+  title: 'Building this blog',
+  description: 'What is Next.js',
   date: 'April 26, 2020',
   readTime: 2  
 }
@@ -11,33 +11,32 @@ export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>;
 
 ## Why Next.js 
 
-The firm i worked at used next.js so i knew it existed but never had the pleasure of working with it.
-So when it came to making this blog i wanted to try it out.
-in this article i will explain what next.js is excactly, its use cases and where it shines.
+The firm I worked at used next.js, so I knew it existed but never had the pleasure of working with it.
+So when it came to making this blog I wanted to try it out.
+In this article I will explain what next.js is excactly, its use cases and where it shines.
 
 ## What is Next.js
 Next.js is a framework composed of a react front end and express.
-it solves the problem of sending huge javascript packages to the users and letting them compile that client side.
-especially with react and other frameworks this is the case you are sending a big package of javascript and the user has to compile that to HTML.
-Now Next.js solves this problem
-now developers can write their code go as crazy as they want no longer having to think about the end user because all the rendering is done on the server.
-of course Next.js has a list of other advantages but this is the biggest one in my humble opnionion for the end user.
+It solves the problem of sending huge javascript packages to the users and letting them compile it client side.
+Especially with react and other frameworks this is the case you are sending a big package of javascript and the user has to compile that to HTML.
+Now Next.js solves this problem.
+Now developers can write their code go as crazy as they want, no longer having to think about the end user because all the rendering is done on the server.
+of course Next.js has a list of other advantages but this is the biggest one in my humble opnionion.
 ## Why did i make this blog in next.js ?
 Next.js also takes a lot of developer problems away.
-mainly the following
-SEO , while developer always find this one pretty hard , next.js out of the box comes with SEO.
-the other huge benefits is that you can get a site up and running fairly quickly.
-if we dont count the content the whole setup was done in less than 2 hours.
-this is because next.js has a lot of out of the box support through webpack , asset compilation hot realoading code splitting. anyone with a decent javascript and react knowledge can pick up this framework very easily.
-it is also very extensible. for example i prefer mdx pages to write my blogposts in , this is loading a depandancy and here i am writing this in mdx.
-however next.js gives you no direct acces to webpack so you need to add these to next.config.js.
+mainlySEO , while developer always find this one pretty hard , next.js out of the box comes with SEO.
+The other huge benefits is that you can get a site up and running fairly quickly.
+If we dont count the content the whole setup was done in less than 2 hours.
+This is because next.js has a lot of out of the box support through webpack: asset compilation, hot realoading, code splitting. Anyone with a decent javascript and react knowledge can pick up this framework very easily.
+It is also very extensible, for example i prefer mdx pages to write my blogposts in , this is loading a depandancy and here I am writing this in mdx.
+However next.js gives you no direct acces to webpack so you need to add these to next.config.js.
 ## Should i learn Next.js
-Next.js is an active member of the react eco system so if you are a react developer. 
+Next.js is an active member of the react eco system so if you are a react developer,
 I highly encourage learning this. 
-It has a low learning curve and it is becoming more and more popular. So Next.js is here to stay in my opinion
+It has a low learning curve and it is becoming more and more popular. So Next.js is here to stay in my opinion.
 ## how did i make this blog
 I took the Next.js starter template threw out what i did not need because next.js comes with a lot of stuff out of the box.
-then i wrote my config file to allow mdx files because i prefer to write in that
-then i made function that fetches all the posts this way i did not need a headless cms or a database and could all store it in my files since this is a static site.
+Then I wrote my config file to allow mdx files because i prefer to write in that.
+Then i made function that fetches all the posts this way i did not need a headless cms or a database and could all store it in my files since this is a static site.
 the i started seperating my page into react components.
-Once that was all done i only had to create a new mdx file to make a blog post
+Once that was all done I only had to create a new folder with a mdx file to make a blog post
