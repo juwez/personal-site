@@ -1,0 +1,12 @@
+import BlogPost from '../../../components/BlogPost'
+
+
+export const meta = {
+  title: 'hack the future',
+  description: 'ending in the top 3 of hack the future',
+  date: 'April 20, 2020',
+  readTime: 4
+}
+
+export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>;
+

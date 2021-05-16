@@ -29,7 +29,14 @@ SEO , while developer always find this one pretty hard , next.js out of the box 
 the other huge benefits is that you can get a site up and running fairly quickly.
 if we dont count the content the whole setup was done in less than 2 hours.
 this is because next.js has a lot of out of the box support through web pack , asset compilation hot realoading code splitting. anyone with a decent javascript and react knowledge can pick up this framework very easily.
+it is also very extensible. for example i prefer mdx pages to write my blogposts in , this is loading a depandancy and here i am writing this in mdx.
 ## Should i learn Next.js
 Next.js is an active member of the react eco system so if you are a react developer. 
 I highly encourage learning this. 
 It has a low learning curve and it is becoming more and more popular. So Next.js is here to stay in my opinion
+## how did i make this blog
+I took the Next.js starter template threw out what i did not need because next.js comes with a lot of stuff out of the box.
+the i wrote my config file to allow mdx files because i prefer to write in that
+then i made function that fetches all the posts this way i did not need a headless cms or a database and could all store it in my files since this is a static site.
+the i started seperating my page into react components.
+Once that was all done i only had to create a new mdx file to make a blog post

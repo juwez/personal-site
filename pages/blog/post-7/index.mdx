@@ -1,0 +1,12 @@
+import BlogPost from '../../../components/BlogPost'
+
+
+export const meta = {
+  title: 'Common Lisp tutorial',
+  description: 'going over the working of this ancient language',
+  date: 'May 1, 2021',
+  readTime: 4
+}
+
+export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>;
+
