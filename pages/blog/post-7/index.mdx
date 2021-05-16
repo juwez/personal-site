@@ -3,10 +3,84 @@ import BlogPost from '../../../components/BlogPost'
 
 export const meta = {
   title: 'Common Lisp tutorial',
-  description: 'going over the working of this ancient language',
+  description: 'creating a Lisp enviroment',
   date: 'May 1, 2021',
   readTime: 4
 }
 
 export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>;
 
+## Lisp
+Lisp has two popular offsprings scheme and common lisp, whilst scheme is more popular this tutorial will be about common Lisp
+
+## things you should have 
+a linux enviroment
+## who is this for ?
+people who are interested in this language and want to get a working enviroment up and running.
+## what will you know at the end ?
+the "weird" way in wich Lisp work
+At the end of this tutorial you will have a working installation of doom emacs (the editor) and a lisp environment
+## installing Lisp
+so first we will install steelbank common lisp, this will be your Lisp compiler.
+most modern languages ship with a compiler(the little run button) lisp does not do this so we have to install that.
+steelbank common lisp is one of the more popular ones therefore i choose this one.
+
+we will also install rlwrap why is this so we can use our up and down keys and they dont become those weird characters
+and then finally emacs
+to all the vim users please dont leave yet when you read this we will make it vim friendly
+
+so that gives the command sudo pacman -S sbcl rlwrap emacs
+depending on your distro you will need to change pacman to your package manager
+## making emacs evil 
+now we want the evil mode in emacs.
+doom emacs has its own github page but to save you a click to install doom emacs you will need this command to
+
+git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
+
+once that is done you will need this command 
+
+~/.emacs.d/bin/doom install
+
+during the installation process you can just press yes the entire time this is so you can install the fonts etc
+when these things are done doom emacs is installed
+if everything went ok, if you now open emacs you will be greeted by this screen
+you should be greeted by the doom homescreen instead of the regular emacs one
+
+## enabling common lisp in doom emacs
+now before we can start using doom emacs there is one file we need to change. since doom emacs can be used for almost everything.
+for example i also use it for developing in c , other people use it as an agenda , you can really do almost everyhing with this IDE 
+but lets stay here for the lisp.
+so press 
+spc .
+this is she shortcut to browse files 
+and go to /home/user/.doom.d/init.el
+there will be a line with ;; common-Lisp
+delete the;; , the ;; is used to indicate that this is a commment so we want to uncomment that.
+as you can see there are also a lot of other cool options so feel free to experiment with those as well as doom emacs is really a great editor.
+
+## package manager and starting a project
+now we still need a package manager , for example what pypy does for python importing libarares.
+for this we need to install quicklisp, but this is not so straightforward as well 
+so firstly we need to download it 
+for that you need these commands
+curl -O https://beta.quicklisp.org/quicklisp.lisp
+curl -O https://beta.quicklisp.org/quicklisp.lisp.asc
+and then verify it with
+gpg --verify quicklisp.lisp.asc quicklisp.lisp
+
+now to install this we need to enter a lisp shell
+you can do this by
+sbcl --load quicklisp.lisp
+this will open a shell that has quicklisp loaded
+now you need to type 
+(quicklisp-quickstart:install)
+
+so now it is installed but while we are here lets create our first project
+meanwhile we can use quicklisp for the first time
+(ql:quickload :cl-project)
+this loads the cl-project package
+once its done we can do 
+(cl-project:make-project #p"~/quicklisp/local-projects/demo")
+## playing with emacs
+now we have both doom and common lisp set up and you can finally start playing aroudn with Lisp. 
+I hope you found this helpfull
