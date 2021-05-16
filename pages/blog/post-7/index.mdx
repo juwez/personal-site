@@ -54,8 +54,8 @@ so press
 spc .
 this is she shortcut to browse files 
 and go to /home/user/.doom.d/init.el
-there will be a line with ;; common-Lisp
-delete the;; , the ;; is used to indicate that this is a commment so we want to uncomment that.
+there will be a line with `;; common-Lisp`
+delete the ;; , the ;; is used to indicate that this is a commment so we want to uncomment that.
 as you can see there are also a lot of other cool options so feel free to experiment with those as well as doom emacs is really a great editor.
 
 ## package manager and starting a project
@@ -63,24 +63,24 @@ now we still need a package manager , for example what pypy does for python impo
 for this we need to install quicklisp, but this is not so straightforward as well 
 so firstly we need to download it 
 for that you need these commands
-curl -O https://beta.quicklisp.org/quicklisp.lisp
-curl -O https://beta.quicklisp.org/quicklisp.lisp.asc
+`curl -O https://beta.quicklisp.org/quicklisp.lisp`
+`curl -O https://beta.quicklisp.org/quicklisp.lisp.asc`
 and then verify it with
-gpg --verify quicklisp.lisp.asc quicklisp.lisp
+`gpg --verify quicklisp.lisp.asc quicklisp.lisp`
 
 now to install this we need to enter a lisp shell
 you can do this by
-sbcl --load quicklisp.lisp
+`sbcl --load quicklisp.lisp`
 this will open a shell that has quicklisp loaded
 now you need to type 
-(quicklisp-quickstart:install)
+`(quicklisp-quickstart:install)`
 
 so now it is installed but while we are here lets create our first project
 meanwhile we can use quicklisp for the first time
-(ql:quickload :cl-project)
+`(ql:quickload :cl-project)`
 this loads the cl-project package
 once its done we can do 
-(cl-project:make-project #p"~/quicklisp/local-projects/demo")
+`(cl-project:make-project #p"~/quicklisp/local-projects/demo")`
 ## playing with emacs
 now we have both doom and common lisp set up and you can finally start playing aroudn with Lisp. 
 I hope you found this helpfull
