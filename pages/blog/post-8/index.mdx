@@ -1,0 +1,11 @@
+import BlogPost from '../../../components/BlogPost'
+
+
+export const meta = {
+  title: 'the Linux adventure',
+  description: 'going from complaining about not having a gui to living in the terminal',
+  date: 'April 20, 2020',
+  readTime: 4
+}
+
+export default ({ children }) => <BlogPost meta={meta}>{children}</BlogPost>;
